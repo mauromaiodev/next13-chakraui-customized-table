@@ -1,4 +1,8 @@
+"use client";
+
 import type { Metadata } from "next";
+
+import { ChakraProvider } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Next Template",
@@ -13,8 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <h1>Next 13 Template</h1>
-        {children}
+        <ChakraProvider>{children}</ChakraProvider>
       </body>
     </html>
   );
