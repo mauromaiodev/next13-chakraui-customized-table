@@ -14,7 +14,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <h1>Next 13 Template</h1>
-
         {children}
       </body>
     </html>
