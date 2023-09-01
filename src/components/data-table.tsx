@@ -90,8 +90,8 @@ function DataTable<T extends object>(props: DataTableProps<T>) {
       <Box mt="6" display="flex" justifyContent="space-between">
         <Select
           w="20"
-          onChange={(e) => {
-            setPageSize(+e.target.value);
+          onChange={(event) => {
+            setPageSize(+event.target.value);
           }}
         >
           <option value="5">5</option>
