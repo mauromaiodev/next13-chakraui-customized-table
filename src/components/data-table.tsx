@@ -62,6 +62,7 @@ function DataTable<T extends object>(props: DataTableProps<T>) {
       hooks.visibleColumns.push((columns) => [
         {
           id: "selection",
+          // eslint-disable-next-line react/prop-types
           Header: ({ getToggleAllPageRowsSelectedProps }) => {
             const { checked, ...props } = getToggleAllPageRowsSelectedProps();
             return (
@@ -70,6 +71,7 @@ function DataTable<T extends object>(props: DataTableProps<T>) {
               </Box>
             );
           },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           Cell: ({ row }: any) => {
             const { checked, ...props } = row.getToggleRowSelectedProps();
             return (

@@ -5,6 +5,7 @@ import { HStack } from "@chakra-ui/layout";
 
 type PaginationProps = {
   currentPage: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
   onClick: (page: number) => void;
   totalPages: number;
