@@ -1,5 +1,5 @@
-/* eslint-disable react/jsx-key */
 "use client";
+/* eslint-disable react/jsx-key */
 import {
   HiArrowDown,
   HiArrowUp,
@@ -24,16 +24,12 @@ import { Box } from "@chakra-ui/layout";
 import { Button, Checkbox, HStack, Select } from "@chakra-ui/react";
 import { Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/table";
 
-type DataItem = {
-  id: number;
-};
-
 type DataTableProps<T extends object> = {
   data: T[];
   column: ReadonlyArray<Column<T>>;
 };
 
-function DataTable<T extends DataItem>(props: DataTableProps<T>) {
+function DataTable<T extends object>(props: DataTableProps<T>) {
   const {
     page,
     prepareRow,
@@ -41,7 +37,6 @@ function DataTable<T extends DataItem>(props: DataTableProps<T>) {
     headerGroups,
     getTableProps,
     setGlobalFilter,
-    setFilter,
     canPreviousPage,
     canNextPage,
     nextPage,
@@ -67,7 +62,6 @@ function DataTable<T extends DataItem>(props: DataTableProps<T>) {
       hooks.visibleColumns.push((columns) => [
         {
           id: "selection",
-          // eslint-disable-next-line react/prop-types
           Header: ({ getToggleAllPageRowsSelectedProps }) => {
             const { checked, ...props } = getToggleAllPageRowsSelectedProps();
             return (
@@ -103,7 +97,6 @@ function DataTable<T extends DataItem>(props: DataTableProps<T>) {
           <option value="5">5</option>
           <option value="25">25</option>
           <option value="75">75</option>
-          <option value="100">100</option>
         </Select>
         <TextField
           placeholder="Procurar"
@@ -171,7 +164,7 @@ function DataTable<T extends DataItem>(props: DataTableProps<T>) {
           <Pagination
             currentPage={pageIndex}
             totalPages={pageOptions.length}
-            data={props.data}
+            data={pageOptions}
             onClick={gotoPage}
           />
           <Button
@@ -188,7 +181,7 @@ function DataTable<T extends DataItem>(props: DataTableProps<T>) {
             colorScheme="purple"
             rightIcon={<HiChevronRight />}
           >
-            Próximo
+            Proximo
           </Button>
         </HStack>
       </Box>

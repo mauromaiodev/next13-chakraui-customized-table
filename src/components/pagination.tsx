@@ -3,17 +3,9 @@ import { useMemo } from "react";
 import { Button } from "@chakra-ui/button";
 import { HStack } from "@chakra-ui/layout";
 
-type DataItem = {
-  id: number;
-  name: string;
-  enterprise: string;
-  position: string;
-  city: string;
-};
-
 type PaginationProps = {
   currentPage: number;
-  data: DataItem[];
+  data: any;
   onClick: (page: number) => void;
   totalPages: number;
 };
