@@ -133,14 +133,6 @@ function DataTable<T extends DataItem>(props: DataTableProps<T>) {
                           ) : null}
                         </HStack>
                       </Box>
-                      {column.canFilter ? (
-                        <TextField
-                          onChangeDebounce={(value) =>
-                            setFilter(column.id, value)
-                          }
-                          placeholder={`Procurar ${column.id.toLocaleLowerCase()}`}
-                        />
-                      ) : null}
                     </Th>
                   );
                 })}
