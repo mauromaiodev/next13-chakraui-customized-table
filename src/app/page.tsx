@@ -1,3 +1,5 @@
+"use client";
+
 import { Column } from "react-table";
 
 import DataTable from "components/data-table";
